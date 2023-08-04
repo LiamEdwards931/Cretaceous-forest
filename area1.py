@@ -12,7 +12,12 @@ def area_1(direction):
         print("------------------------------\n")
 
         if option == "back":
-            print("option1")
+            print("You decide to go back from where you came to avoid the herd")
+            from classes import dinosaur
+            allosaur = dinosaur('Allosaurus', '28', 'carnivore')
+            print(allosaur.description())
+            print('As you try to evade the massive carnivore, it chases and catches you in its powerful jaws')
+            dead = True
             choice = "correct"
         elif option == "forest":
             print("option2")

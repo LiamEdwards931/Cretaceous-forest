@@ -30,4 +30,18 @@ class grasslands:
         return f"You make your way through the forest and finally reach the grasslands,\nThe {self.sky} exploded across the horizon,\nWhen you take a look around you see {self.area}"
 
 
+class dinosaur:
+    """
+    Creates a dinosaur class
+    """
+    def __init__(self, species, length, type):
+        self.species = species
+        self.length = length
+        self.type = type
+    
+    def description(self):
+        """
+        describes the dinosaur
+        """
+        return f"An {self.species} emerges, it is {self.length} feet long and is a {self.type}"
 
