@@ -1,5 +1,5 @@
-player_name = input('Please Enter Your Name:')
 from classes import grasslands, dinosaur
+player_name = input('Please Enter Your Name:')
 
 
 def start_up(player_name):
