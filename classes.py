@@ -7,7 +7,7 @@ class forest:
        self.sky = sky
        self.color = color
        self.foliage = foliage 
-    
+   
     def description(self):
         """
         Describes the forest
@@ -15,6 +15,19 @@ class forest:
         return f"As you take a look around you see {self.foliage}, the {self.sky} was barely shimmering through the towering {self.color} trees."
 
 
-dusk_forest = forest('evening sky', 'orange', 'an endless forest, unfamiliar foliage, and a murky river')
-print(dusk_forest.description())
+class grasslands:
+    """
+    describes the grassland area
+    """
+    def __init__(self, sky, area):
+        self.sky = sky
+        self.area = area
+        
+    def description(self):
+        """
+        descrives the grasslands
+        """
+        return f"You make your way through the forest and finally reach the grasslands,\nThe {self.sky} exploded across the horizon,\nWhen you take a look around you see {self.area}"
+
+
 
