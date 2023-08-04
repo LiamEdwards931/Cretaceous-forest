@@ -30,3 +30,10 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ---
 
 Happy coding!
+
+
+## Bugs 
+- Function wouldn't import and run properly for area1 - Called the function from within the file area_1 and used import on the choice to make it work.
+- Created an infinite loop with the choice method for introduction - Added an input in the else statement to make sure to have another input before looping again. 
+- Game was running start_game() twice - removed the second call 
+- Game was asking for a restart every time an option was called - called the death function from inside the option.

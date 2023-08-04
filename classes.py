@@ -34,14 +34,14 @@ class dinosaur:
     """
     Creates a dinosaur class
     """
-    def __init__(self, species, length, type):
+    def __init__(self, species, length, describe):
         self.species = species
         self.length = length
-        self.type = type
+        self.describe = describe
     
     def description(self):
         """
         describes the dinosaur
         """
-        return f"An {self.species} emerges, it is {self.length} feet long and is a {self.type}"
+        return f"A {self.species} emerges, it's {self.length} feet long, {self.describe}"
 
