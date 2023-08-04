@@ -19,8 +19,8 @@ def start_up(player_name):
     print(dusk_forest.description())
     print("You try to make sense of where you are when you hear a deafening roar.\n")
     # First Scene
-    print("You see a fork in the road, the paths to choose are left to the grassland or right into the deep forest, you could also try your luck swimming in the river, which path do you take?")
-    print("Options: left, right, swim")
+    print("You see a fork in the road, the paths to choose are left to the grassland or right into the deep forest, you could also try your luck swimming in the river,\nwhich path do you take?\n")
+    print("Options: left, right, swim\n")
  
     choice = "incorrect"
     while choice == "incorrect":
@@ -30,10 +30,10 @@ def start_up(player_name):
             area_1("left")
             choice = "correct"
         elif option == "right":
-            print("option2")
+            #deep_forest()
             choice = "correct"
         elif option == "swim":
-            print("option3")
+            #ocean()
             choice = "correct"
         else:
             print("Please choose a valid option")
@@ -73,6 +73,7 @@ def area_1(directions):
         elif option == "hide":
             print("You run towards the foliage to shelter yourself from the stampede, You survive the encounter and proceed towards where the stampede came from\n")
             choice = "correct"
+            #airfield()
         else:
             print("Please choose a valid option")
 
@@ -85,7 +86,7 @@ def main_functions():
 
 
 def restart_game():
-    print("Do you want to play again?")
+    print("Do you want to play again?\n")
     choice = input("Enter 'yes' to restart, or any other key to quit: ")
 
     if choice.lower() == "yes":
