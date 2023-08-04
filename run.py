@@ -1,6 +1,3 @@
-injured = False
-dead = False
-
 player_name = input('Please Enter Your Name:')
 
 
@@ -13,13 +10,14 @@ def start_up():
     print("A Text Based Game To Survive In a Cretaceous Era Forest\n")
     print("------------------------------\n")
     intro()
+    
    
 
 def intro():
     """
     Runs the introduction to the text-game
     """
-    print("You wake up and you do not know where you are, the last thing you remember is that the plane that is on the airfield to escape is leaving soon.\n")
+    print("You wake up and you do not know where you are, the last thing you remember is that the plane that is on the airfieldto escape is leaving soon.\n")
     print(f"It is your job {player_name} to choose the options that will get you to safety.\n")
     print("------------------------------\n")
     from classes import forest
@@ -52,16 +50,22 @@ def main_functions():
     """
     Runs the main functions of the text-based game.
     """
-    global dead  
-    while not dead:  
-        start_up()
+    start_up()  
+
+
+
+def restart_game():
+    while True:  
         print("You have died, would you like to restart? y/n")
         answer = input("Answer here: ").lower()
-        if answer != 'y':
-            print(f"Thank you for playing Cretaceous Forest {player_name}")
-            break
-        dead = False
-      
-      
+        if answer == 'y':
+            main_functions()  
+        elif answer == 'n':
+            print("Thanks for playing! Goodbye.")
+            break  
+        else:
+            print("Invalid input. Please enter 'y' to restart or 'n' to quit.")
+   
+
 main_functions()
 
