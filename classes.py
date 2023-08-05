@@ -31,6 +31,22 @@ class grasslands:
         return f"You make your way through the forest and finally reach the grasslands,\nThe {self.sky} exploded across the horizon,\nWhen you take a look around you see {self.area}"
 
 
+class deep_forest:
+    """
+    class for the deep forest
+    """
+    def __init__(self, height, density, sound):
+        self.height = height
+        self.density = density
+        self.sound = sound
+
+    def get_description(self):
+        """
+        Appends the super class, and adds a description
+        """
+        return f"You evaluate your surroundings, becuase the {self.density} it was hard to get a good view of in front of you\nAs you look up you see {self.height} meter high trees\nThe ambience was quiet and eerie. Until you hear {self.sound}"
+
+
 #Creates the animals
 class dinosaur:
     """
