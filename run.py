@@ -1,5 +1,5 @@
-from classes import grasslands, dinosaur
-player_name = input('Please Enter Your Name:')
+from classes import grasslands, dinosaur, carnivore
+
 
 
 def start_up(player_name):
@@ -56,16 +56,16 @@ def area_1(directions):
 
         if option == "back":
             print("You decide to go back from where you came to avoid the herd\n")
-            allosaur = dinosaur('Allosaurus', '28', 'it looks hungry..')
-            print(allosaur.description())
+            Allosaurus = carnivore('Allosaurus', '27', 'rows of sharp teeth serrated at the edges', 'blunt horn just in front of and above the eyes')
+            print(Allosaurus.get_description())
             print("As you try to evade the massive carnivore, it chases and devours you in its powerful jaws\n")
             choice = "correct"
             restart_game() 
 
         elif option == "detour":
             print("You decide to avoid the herd by running around them, as you get around")
-            rex = dinosaur('T-rex','41', "It's Giant head and blade like teeth, scanning for the next meal..")
-            print(rex.description())
+            rex = carnivore('T-rex','41','serrated blade like teeth, a massive head with powerful jaws','tiny arms in comparison to its massive body')
+            print(rex.get_description())
             print("You manage to evade the T-rex as it was distracted by a straggling dinosaur from the herd, and you head towards the Deep Forest\n")
             choice = "correct"
             #deep_forest()
@@ -82,6 +82,8 @@ def main_functions():
     """
     Runs the main functions of the text-based game.
     """
+    global player_name
+    player_name = input('Please Enter Your Name To Start:')
     start_up(player_name) 
 
 

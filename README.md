@@ -37,3 +37,9 @@ Happy coding!
 - Created an infinite loop with the choice method for introduction - Added an input in the else statement to make sure to have another input before looping again. 
 - Game was running start_game() twice - removed the second call 
 - Game was asking for a restart every time an option was called - called the death function from inside the option.
+
+
+
+## Credits
+
+- References some descriptive material for the dinosaurs from [Live Science](https://www.livescience.com/24815-allosaurus.html)
