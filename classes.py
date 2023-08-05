@@ -1,3 +1,4 @@
+#Creates the environments
 class forest:
     """
     describes the generic forest
@@ -30,6 +31,7 @@ class grasslands:
         return f"You make your way through the forest and finally reach the grasslands,\nThe {self.sky} exploded across the horizon,\nWhen you take a look around you see {self.area}"
 
 
+#Creates the animals
 class dinosaur:
     """
     Creates a dinosaur class

@@ -30,10 +30,10 @@ def start_up(player_name):
             area_1("left")
             choice = "correct"
         elif option == "right":
-            #deep_forest()
+            area_2("right")
             choice = "correct"
         elif option == "swim":
-            #ocean()
+            area_3("swim")
             choice = "correct"
         else:
             print("Please choose a valid option")
@@ -41,7 +41,7 @@ def start_up(player_name):
 
 def area_1(directions):
     """
-    Function that has the grasslands scene
+    Function that has the grasslands scene (Go left from the first area)
     """
     grass_land = grasslands('evening sky', 'the forest you just came from, the deeper forest to the right and fallen foliage in the middle of the plains')
     print(grass_land.description())
@@ -68,7 +68,7 @@ def area_1(directions):
             print(rex.get_description())
             print("You manage to evade the T-rex as it was distracted by a straggling dinosaur from the herd, and you head towards the Deep Forest\n")
             choice = "correct"
-            #deep_forest()
+            area_2("detour")
             
         elif option == "hide":
             print("You run towards the foliage to shelter yourself from the stampede, You survive the encounter and proceed towards where the stampede came from\n")
@@ -78,12 +78,65 @@ def area_1(directions):
             print("Please choose a valid option")
 
 
+def area_2(directions):
+    """
+    Function that has the deep forest scene (Go right from the first area, detour from the second area)
+    """
+    print("You find yourself in the Deep Forest")
+
+    choice = "incorrect"
+    while choice == "incorrect":
+        option = input("Your choice is: ").lower()
+        print("------------------------------\n")
+
+        if option == "run":
+            print("option 1")
+            choice = "correct"
+        elif option == "climb":
+            print("option 2")
+            choice = "correct"
+        else:
+            print("Please choose a valid option")
+
+
+def area_3(directions):
+    """
+    Function that has the Ocean scene (Swim from the first area)
+    """
+    print("You jump into the murky water, the current is too strong and sweeps you downstream towards the ocean\n")
+    print("As you finally hit calmer waters, you see a boat in the ocean\nYou can try to swim for the boat or you could try swimming back up the river\n")
+    print("Options: upstream, ocean")
+
+    choice = "incorrect"
+    while choice == "incorrect":
+        option = input("Your choice is: ").lower()
+        print("------------------------------\n")
+
+        if option == "upstream":
+            print("The current is too strong you cannot go back that way\n")
+
+        elif option == "ocean":
+            print("You try to swim for the boat, a massive shadow is lurking under the water, as you approach the boat you get dragged under\n")
+            mosasaur = carnivore('Mosasaurus','59','incredibly sharp saw like teeth','flipper like fins, smooth grey scales and a shark like tail')
+            print(mosasaur.get_description())
+            print("As you try to swim for the surface, the Mosasaur loops back around devouring you in one bite")
+            restart_game()
+
+            choice = "correct"
+        else:
+            print("Please choose a valid option")
+
+
 def main_functions():
     """
     Runs the main functions of the text-based game.
     """
+    #Variable for name is here so when restart game is called it allows you to change your name if you wish.
     global player_name
     player_name = input('Please Enter Your Name To Start:')
+    #Injured variable True or False is here
+    global injured
+    injured = False
     start_up(player_name) 
 
 
