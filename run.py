@@ -72,8 +72,11 @@ def area_1(directions):
             
         elif option == "hide":
             print("You run towards the foliage to shelter yourself from the stampede, You survive the encounter and proceed towards where the stampede came from\n")
+            print("You snag your leg on a branch, giving you a deep cut you are covered in blood you have 'Injured' status")
+            global injured
+            injured = True
             choice = "correct"
-            #airfield()
+            area_4("hide")
         else:
             print("Please choose a valid option")
 
@@ -103,7 +106,9 @@ def area_2(directions):
             restart_game()
             choice = "correct"
         elif option == "climb":
-            print("option 2")
+            print("You decide to not take any chances with the rustling in the bushes\n you climb to a safe level in the trees and start to procede forwards")
+            print("you see a clearing in the trees, and see the airport.. you climb down")
+            area_4("climb")
             choice = "correct"
         else:
             print("Please choose a valid option")
@@ -135,6 +140,40 @@ def area_3(directions):
             choice = "correct"
         else:
             print("Please choose a valid option")
+
+def area_4(direction):
+    """
+    function that has the airport scene
+    """
+    print("You arrive at the airport")
+    print("options: outskirt, run, sneak")
+    choice = "incorrect"
+    while choice == "incorrect":
+        option = input("Your choice is: ").lower()
+        print("------------------------------\n")
+
+        if option == "outskirt":
+            if(injured):
+                print("You make your way around the outskirts, The Velociraptor pack from the deep forest smell your blood from your injury")
+                print("You get ambushed, and eaten alive")
+                restart_game()
+            else:
+                print("You make your way around the outskirts and spot a guard tower, inside the tower there is a note with a code [4,7,2,9]\n")
+                print("you continue on your path the hanger entrance")
+                #door_puzzle()
+            choice = "correct"
+        elif option == "run":
+            print("You run for the door but the T-rex from earlier comes out of nowhere, chasing you down and devouring you\n")
+            restart_game()
+            choice = "correct"
+        elif option == "sneak":
+            print("You decide to sneak the long way around the airport and you arrive at the hanger door\n")
+            #door_puzzle()
+            choice = "correct"
+        else:
+            print("Invalid choice. Please choose again.\n")
+
+
 
 
 def main_functions():
