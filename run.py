@@ -149,7 +149,7 @@ def area_4(direction):
     print("You arrive at the airport\n")
     airfield = airport('a guard tower on the outskirt and a path with cover from overgrown bushes')
     print(airfield.description())
-    print("After surveying the area and considering the options you think you can sneak through the bushes to the hanger, take the longer route through the outskirts of the path, or make a run for it\n")
+    print("After surveying the area and considering the options you think you can sneak through the bushes to the hanger\nTake the longer route through the outskirts of the path, or make a run for it\n")
     print("options: outskirt, run, sneak\n")
     choice = "incorrect"
     while choice == "incorrect":
@@ -186,8 +186,8 @@ def door_puzzle():
     sequence_input = []
 
     print("You get to the hanger and you notice a keypad with 9 numbers on it, a red light flickering to show power is still on.\n")
-    
-    #Not my code here - taken from an online source stack overflow.
+    print("Enter 0 to leave the puzzle.\n")
+
     def display_keypad():
         keypad_layout = [
             ["[" + str(num) + "]" if num in sequence_input else " " + str(num) + " " for num in range(1, 4)],
@@ -201,20 +201,31 @@ def door_puzzle():
     while len(sequence_input) < 4:
         try:
             display_keypad()
-            num = int(input("Enter a single number (1-9): "))
-            if 1 <= num <= 9:
+            num = int(input("Enter a single number (1-9) or 0 to leave: "))
+            if num == 0:
+                print("You decided to leave the puzzle.")
+                area_4("leave")
+            elif 1 <= num <= 9:
                 sequence_input.append(num)
             else:
-                print("Invalid input. Please enter a number between 1 and 9.")
+                print("Invalid input. Please enter a number between 1 and 9 or 0 to leave.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
     # Tests your input against the correct sequence
     if sequence_input == correct_sequence:
-        print("The light changes from red to green, you hear a click... you try the door and it opens")
+        print("The light changes from red to green, you hear a click... you try the door and it opens\n")
+        hanger()
     else:
         print("That code didn't work... try again.")
         door_puzzle()
+
+
+def hanger():
+    """
+    runs the hanger scene
+    """
+    print("You make it through the door inside the hanger, you spot the plane\n")
 
 
 def main_functions():
