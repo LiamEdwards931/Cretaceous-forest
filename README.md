@@ -43,3 +43,4 @@ Happy coding!
 ## Credits
 
 - References some descriptive material for the dinosaurs from [Live Science](https://www.livescience.com/24815-allosaurus.html)
+- Some code taken from [Stack Overflow](https://r.search.yahoo.com/_ylt=AwrkLvnCDtBkEJkNzlB3Bwx.;_ylu=Y29sbwMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1691385666/RO=10/RU=https%3a%2f%2fstackoverflow.com%2f/RK=2/RS=hF76jkJyIvI7mQ0w7b9zkILi5Vs-)

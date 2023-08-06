@@ -164,8 +164,6 @@ def area_4(direction):
             else:
                 print("You make your way around the outskirts and spot a guard tower, inside the tower there is a note with a code [4,7,2,9]\n")
                 print("you continue on your path the hanger entrance")
-                global has_code
-                has_code = True
                 door_puzzle()
             choice = "correct"
         elif option == "run":
@@ -184,16 +182,39 @@ def door_puzzle():
     """
     Function for the door puzzle (keycode)
     """
-    print("You get to the hanger and you notice a key pad with 9 numbers on it\n")
-    print("[1][2][3]\n[4][5][6]\n[7][8][9]\n")
-    if (has_code):
-        print("You try the numbers you found in the guard tower....")
-        print("They work and the door swings open!")
-    else:
-        print("The only thing you can see on the box is that you need a sequence of 4 numbers")
-        
- 
+    correct_sequence = [4, 7, 2, 9]
+    sequence_input = []
 
+    print("You get to the hanger and you notice a keypad with 9 numbers on it, a red light flickering to show power is still on.\n")
+    
+    #Not my code here - taken from an online source stack overflow.
+    def display_keypad():
+        keypad_layout = [
+            ["[" + str(num) + "]" if num in sequence_input else " " + str(num) + " " for num in range(1, 4)],
+            ["[" + str(num) + "]" if num in sequence_input else " " + str(num) + " " for num in range(4, 7)],
+            ["[" + str(num) + "]" if num in sequence_input else " " + str(num) + " " for num in range(7, 10)]
+        ]
+        for row in keypad_layout:
+            print("".join(row))
+
+    # Player's input
+    while len(sequence_input) < 4:
+        try:
+            display_keypad()
+            num = int(input("Enter a single number (1-9): "))
+            if 1 <= num <= 9:
+                sequence_input.append(num)
+            else:
+                print("Invalid input. Please enter a number between 1 and 9.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    # Tests your input against the correct sequence
+    if sequence_input == correct_sequence:
+        print("The light changes from red to green, you hear a click... you try the door and it opens")
+    else:
+        print("That code didn't work... try again.")
+        door_puzzle()
 
 
 def main_functions():
@@ -206,8 +227,6 @@ def main_functions():
     #Injured variable True or False is here
     global injured
     injured = False
-    global has_code
-    has_code = False
     start_up(player_name) 
 
 
