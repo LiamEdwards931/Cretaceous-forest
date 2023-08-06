@@ -1,5 +1,4 @@
-from classes import grasslands, dinosaur, carnivore, deep_forest
-
+from classes import grasslands, dinosaur, carnivore, deep_forest, airport
 
 
 def start_up(player_name):
@@ -10,7 +9,7 @@ def start_up(player_name):
     print(f"Welcome To Cretaceous Forest {player_name}\n")
     print("A Text Based Game To Survive In a Cretaceous Era Forest\n")
     print("------------------------------\n")
-    
+   
     print("You wake up and you do not know where you are, the last thing you remember seeing was an airfield on your way in and decide that will be your best way to escape\n")
     print(f"It is your job {player_name} to choose the options that will get you to safety.\n")
     print("------------------------------\n")
@@ -21,7 +20,7 @@ def start_up(player_name):
     # First Scene
     print("You see a fork in the road, the paths to choose are left to the grassland or right into the deep forest, you could also try your luck swimming in the river,\nwhich path do you take?\n")
     print("Options: left, right, swim\n")
- 
+
     choice = "incorrect"
     while choice == "incorrect":
         option = input("Your choice is: ").lower()
@@ -69,10 +68,11 @@ def area_1(directions):
             print("You manage to evade the T-rex as it was distracted by a straggling dinosaur from the herd, and you head towards the Deep Forest\n")
             choice = "correct"
             area_2("detour")
-            
+          
         elif option == "hide":
-            print("You run towards the foliage to shelter yourself from the stampede, You survive the encounter and proceed towards where the stampede came from\n")
-            print("You snag your leg on a branch, giving you a deep cut you are covered in blood you have 'Injured' status")
+            print("You run towards the foliage to shelter yourself from the stampede,\nYou snag your leg on a branch, giving you a deep cut you are covered in blood you have 'Injured' status")
+            print("You survive the encounter and proceed towards where the stampede came from\n")
+         
             global injured
             injured = True
             choice = "correct"
@@ -99,15 +99,15 @@ def area_2(directions):
 
         if option == "run":
             print("You try to sprint through the forest, as you do..")
-            velociraptor = carnivore('Velociraptor','5','small blade teeth','sharp curved claw, capable of slicing through thick hides')
+            velociraptor = carnivore('Velociraptor','5','small blade teeth', 'sharp curved claw, capable of slicing through thick hides')
             print(velociraptor.get_description())
             print("The velociraptor disappears from sight, just as you breath a sigh of relief..")
             print("You get ambushed by a second one in the pack from the nearby bushes\n you are eaten alive by the raptor pack..")
             restart_game()
             choice = "correct"
         elif option == "climb":
-            print("You decide to not take any chances with the rustling in the bushes\n you climb to a safe level in the trees and start to procede forwards")
-            print("you see a clearing in the trees, and see the airport.. you climb down")
+            print("You decide to not take any chances with the rustling in the bushes\nYou climb to a safe level in the trees and start to procede forwards")
+            print("you see a clearing in the trees, and see the airport.. you climb down\n")
             area_4("climb")
             choice = "correct"
         else:
@@ -141,26 +141,32 @@ def area_3(directions):
         else:
             print("Please choose a valid option")
 
+
 def area_4(direction):
     """
     function that has the airport scene
     """
-    print("You arrive at the airport")
-    print("options: outskirt, run, sneak")
+    print("You arrive at the airport\n")
+    airfield = airport('a guard tower on the outskirt and a path with cover from overgrown bushes')
+    print(airfield.description())
+    print("After surveying the area and considering the options you think you can sneak through the bushes to the hanger, take the longer route through the outskirts of the path, or make a run for it\n")
+    print("options: outskirt, run, sneak\n")
     choice = "incorrect"
     while choice == "incorrect":
         option = input("Your choice is: ").lower()
         print("------------------------------\n")
 
         if option == "outskirt":
-            if(injured):
+            if (injured):
                 print("You make your way around the outskirts, The Velociraptor pack from the deep forest smell your blood from your injury")
                 print("You get ambushed, and eaten alive")
                 restart_game()
             else:
                 print("You make your way around the outskirts and spot a guard tower, inside the tower there is a note with a code [4,7,2,9]\n")
                 print("you continue on your path the hanger entrance")
-                #door_puzzle()
+                global has_code
+                has_code = True
+                door_puzzle()
             choice = "correct"
         elif option == "run":
             print("You run for the door but the T-rex from earlier comes out of nowhere, chasing you down and devouring you\n")
@@ -168,11 +174,25 @@ def area_4(direction):
             choice = "correct"
         elif option == "sneak":
             print("You decide to sneak the long way around the airport and you arrive at the hanger door\n")
-            #door_puzzle()
+            door_puzzle()
             choice = "correct"
         else:
             print("Invalid choice. Please choose again.\n")
 
+
+def door_puzzle():
+    """
+    Function for the door puzzle (keycode)
+    """
+    print("You get to the hanger and you notice a key pad with 9 numbers on it\n")
+    print("[1][2][3]\n[4][5][6]\n[7][8][9]\n")
+    if (has_code):
+        print("You try the numbers you found in the guard tower....")
+        print("They work and the door swings open!")
+    else:
+        print("The only thing you can see on the box is that you need a sequence of 4 numbers")
+        
+ 
 
 
 
@@ -186,6 +206,8 @@ def main_functions():
     #Injured variable True or False is here
     global injured
     injured = False
+    global has_code
+    has_code = False
     start_up(player_name) 
 
 

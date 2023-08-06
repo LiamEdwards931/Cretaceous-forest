@@ -47,7 +47,21 @@ class deep_forest:
         return f"You evaluate your surroundings, becuase the {self.density} it was hard to get a good view of in front of you\nAs you look up you see {self.height} meter high trees\nThe ambience was quiet and eerie. Until you hear {self.sound}"
 
 
+class airport:
+    """
+    class for the airport
+    """
+    def __init__(self, surroundings):
+        self.surroundings = surroundings
+   
+    def description(self):
+        """
+        describes the airport
+        """
+        return f"You see {self.surroundings}, You see a hanger across the beaten path and decide to make your way over to it."
+
 #Creates the animals
+
 class dinosaur:
     """
     Creates a dinosaur class
