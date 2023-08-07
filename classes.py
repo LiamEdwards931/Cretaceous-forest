@@ -1,4 +1,4 @@
-#Creates the environments
+# Creates the environments
 class forest:
     """
     describes the generic forest
@@ -53,14 +53,14 @@ class airport:
     """
     def __init__(self, surroundings):
         self.surroundings = surroundings
-   
+ 
     def description(self):
         """
         describes the airport
         """
         return f"You see {self.surroundings}, You see a hanger across the beaten path and decide to make your way over to it."
 
-#Creates the animals
+# Creates the animals
 
 class dinosaur:
     """
