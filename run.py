@@ -10,7 +10,7 @@ def start_up(player_name):
     print("A Text Based Game To Survive In a Cretaceous Era Forest\n")
     print("------------------------------\n")
    
-    print("You wake up and you do not know where you are, the last thing you remember seeing was an airfield on your way in and decide that will be your best way to escape\n")
+    print("You wake up and you do not know where you are\nThe last thing you remember seeing was an airfield on your way in\nYou decide that will be your best way to escape\n")
     print(f"It is your job {player_name} to choose the options that will get you to safety.\n")
     print("------------------------------\n")
     from classes import forest
@@ -287,6 +287,7 @@ def restart_game():
     choice = input("Enter 'yes' to restart, or any other key to quit: ")
 
     if choice.lower() == "yes":
+        print("-----------------------")
         main_functions()
     else:
         print(f"Thank you for playing Creataceuous Forest {player_name}!")

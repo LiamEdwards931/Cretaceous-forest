@@ -13,7 +13,7 @@ class forest:
         """
         Describes the forest
         """
-        return f"As you take a look around you see {self.foliage}, the {self.sky} was barely shimmering through the towering {self.color} trees."
+        return f"As you take a look around you see {self.foliage}\nThe {self.sky} was barely shimmering through the towering {self.color} trees."
 
 
 class grasslands:
@@ -28,7 +28,7 @@ class grasslands:
         """
         Describes the grasslands
         """
-        return f"You make your way through the forest and finally reach the grasslands,\nThe {self.sky} exploded across the horizon,\nWhen you take a look around you see {self.area}"
+        return f"You make your way through the forest and finally reach the grasslands\nThe {self.sky} exploded across the horizon\nWhen you take a look around you see {self.area}"
 
 
 class deep_forest:
@@ -44,7 +44,7 @@ class deep_forest:
         """
         Appends the super class, and adds a description
         """
-        return f"You evaluate your surroundings, becuase the {self.density} it was hard to get a good view of in front of you\nAs you look up you see {self.height} meter high trees\nThe ambience was quiet and eerie. Until you hear {self.sound}"
+        return f"You evaluate your surroundings\nBecuase the {self.density} it was hard to get a good view of in front of you\nAs you look up you see {self.height} meter high trees\nThe ambience was quiet and eerie. Until you hear {self.sound}"
 
 
 class airport:
